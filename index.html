@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Convertidor de números</title>
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <!-- cabecera -->
+        <header class="header">
+            <h1 id="titulo">Convertidor de números</h1>
+        </header>
+
+        <main>
+            <!-- navegación -->
+            <nav>
+                <ul class="lista">
+                    <li>
+                        <a href="#tituloDecimal" class="listaEnlace"
+                            ><strong>De decimal a binario</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tituloBinario" class="listaEnlace"
+                            ><strong>De binario a decimal</strong></a
+                        >
+                    </li>
+                    <li>
+                        <a href="#tituloHexa" class="listaEnlace"
+                            ><strong>De decimal a hexadecimal</strong></a
+                        >
+                    </li>
+                </ul>
+            </nav>
+
+            <section class="mainContainer">
+                <!-- Calculadoras -->
+                <p>
+                    Ingresa el número a convertir según corresponda y oprime la
+                    tecla enter o con el mouse presiona el botón convertir
+                    correspondiente
+                </p>
+                <!-- Contenedor convertidores -->
+
+                <section class="convertidores">
+                    <!-- Decimal -->
+
+                    <article class="convertir">
+                        <h2 class="padding h2Convertir">
+                            Convertir número Decimal a Binario y Hexadecimal
+                        </h2>
+                        <input
+                            type="number"
+                            id="ndecimal"
+                            placeholder="Ejemplo: 253"
+                            class="padding"
+                        />
+                        <button
+                            onclick="convertirDecimal()"
+                            class="padding buttonConvertir"
+                        >
+                            Convertir
+                        </button>
+
+                        <p class="padding">
+                            <em>Binario:</em> <span id="binario"></span>
+                        </p>
+                        <p class="padding">
+                            <em>Hexadecimal:</em> <span id="hexadecimal"></span>
+                        </p>
+                    </article>
+
+                    <!-- Binario -->
+
+                    <article class="convertir">
+                        <h2 class="padding h2Convertir">
+                            Convertir número Binario a Decimal y Hexadecimal
+                        </h2>
+                        <input
+                            type="number"
+                            id="nbinario"
+                            placeholder="Ejemplo: 10110"
+                            class="padding"
+                        />
+                        <button
+                            onclick="convertirBinario()"
+                            class="padding buttonConvertir"
+                        >
+                            Convertir
+                        </button>
+
+                        <p class="padding">
+                            <em>Decimal:</em> <span id="binarioDecimal"></span>
+                        </p>
+                        <p class="padding">
+                            <em>Hexadecimal:</em> <span id="binarioHexa"></span>
+                        </p>
+                    </article>
+
+                    <!-- Hexadecimal -->
+
+                    <article class="convertir">
+                        <h2 class="padding h2Convertir">
+                            Convertir número Hexadecimal a Decimal y Binario
+                        </h2>
+                        <input
+                            type="text"
+                            id="nhexa"
+                            placeholder="Ejemplo: 3E"
+                            class="padding"
+                        />
+                        <button
+                            onclick="convertirHexadecimal()"
+                            class="padding buttonConvertir"
+                        >
+                            Convertir
+                        </button>
+
+                        <p class="padding">
+                            <em>Decimal:</em> <span id="hexaDecimal"></span>
+                        </p>
+                        <p class="padding">
+                            <em>Binario:</em> <span id="hexaBinario"></span>
+                        </p>
+                    </article>
+                </section>
+
+                <hr />
+
+                <!-- Explicación del tema -->
+                <section class="explication">
+                    <!-- Decimal  -->
+                    <article class="explicacionDecimal">
+                        <h2 id="tituloDecimal" class="explicationH2">
+                            Explicación conversión número decimal a binario
+                        </h2>
+                        <p>
+                            Los números decimales tienen base 10 es decir, están
+                            representados por 10 símbolos:
+                        </p>
+                        <p class="simbolos">0, 1, 2, 3, 4, 5, 6, 7, 8, y 9</p>
+                        <p>Por ejemplo, el número 38 tiene base 10.</p>
+                        <p class="simbolos">38<sub>10</sub></p>
+                        <p>
+                            Para realizar la conversión de un número con base 10
+                            (Decimal) a un número con base 2 (Binario) de manera
+                            manual se debe dividir sucesivamente el número entre
+                            2, si el número resultado de la división es decimal,
+                            no se tiene en cuenta la parte decimal, a partir de
+                            los resultados, si el número obtenido es par, se
+                            coloca 0, si es impar se coloca 1.
+                        </p>
+                        <p>
+                            <em>Ejemplo:</em>
+                            <br />Convertir paso a paso el número
+                            <strong>38</strong> a binario: <br />Se divide entre
+                            <strong>2</strong> cada resultado hasta que el
+                            resultado sea <strong>0</strong>
+                        </p>
+                        <table class="tableNumbers tableDecimal">
+                            <th colspan="6">Convertir de decimal a binario</th>
+                            <!-- Usa 6 columnas -->
+                            <tr>
+                                <td>38/2</td>
+                                <td>19/2</td>
+                                <td>9/2</td>
+                                <td>4/2</td>
+                                <td>2/2</td>
+                                <td>1/2</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>9.5</td>
+                                <td>4.5</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>0.5</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                        </table>
+
+                        <p>Acomodando los números de derecha a izquierda</p>
+                        <p>100110</p>
+                        <p class="simbolos">
+                            Entonces el número 38<sub>10</sub> es igual a 100110
+                            <sub>2</sub>
+                        </p>
+                    </article>
+                    <!-- Fin explicación decimal -->
+
+                    <hr />
+                    <!--  -->
+                    <!-- Explicación binario -->
+                    <article class="explicacionBinario">
+                        <h2 id="tituloBinario" class="explicationH2">
+                            Explicación conversión número binario a decimal
+                        </h2>
+                        <p>
+                            Por otro lado, los números binarios tienen base 2,
+                            están representados por dos símbolos:
+                        </p>
+                        <p class="simbolos">0 y 1</p>
+                        <p>Por ejemplo, el número 100110 tiene base 2</p>
+                        <p class="simbolos">100110<sub>2</sub></p>
+                        <p>
+                            Ahora realizar la operación inversa, convertir
+                            número en base dos (binario) a un número base 10
+                            (decimal), para ello se deben multiplicar potencias
+                            de 2 igual a la cantidad de dígitos del número
+                            binario, iniciando de derecha a izquierda, luego
+                            solo se tienen en cuenta los resultados en el que e
+                            número binario tenga un 1 para luego sumarlos
+                        </p>
+
+                        <p>
+                            <em>Ejemplo:</em>
+                            <br />Convertir el número <strong>101110</strong> a
+                            decimal: <br />Se organiza el número 2 con potencias
+                            de derecha a izquierda:
+                        </p>
+                        <table class="tableNumbers tableBinario">
+                            <th colspan="6">Convertir de binario a decimal</th>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <math>
+                                        <msup> <mi>2</mi> <mn>5</mn> </msup>
+                                    </math>
+                                </td>
+                                <td>
+                                    <math>
+                                        <msup> <mi>2</mi> <mn>4</mn> </msup>
+                                    </math>
+                                </td>
+                                <td>
+                                    <math>
+                                        <msup> <mi>2</mi> <mn>3</mn> </msup>
+                                    </math>
+                                </td>
+                                <td>
+                                    <math>
+                                        <msup> <mi>2</mi> <mn>2</mn> </msup>
+                                    </math>
+                                </td>
+                                <td>
+                                    <math>
+                                        <msup> <mi>2</mi> <mn>1</mn> </msup>
+                                    </math>
+                                </td>
+                                <td>
+                                    <math>
+                                        <msup> <mi>2</mi> <mn>0</mn> </msup>
+                                    </math>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="color: #b974bb">
+                                    <strong>32</strong>
+                                </td>
+                                <td>16</td>
+                                <td style="color: #b974bb">
+                                    <strong>8</strong>
+                                </td>
+                                <td style="color: #b974bb">
+                                    <strong>4</strong>
+                                </td>
+                                <td style="color: #b974bb">
+                                    <strong>2</strong>
+                                </td>
+                                <td>1</td>
+                            </tr>
+                        </table>
+                        <p>
+                            Sumando los resultados donde el número binario tenga
+                            1
+                        </p>
+                        <p>32 + 8 + 4 + 2 = 46</p>
+                        <p class="simbolos">
+                            Entonces el número 101110<sub>2</sub> es igual a
+                            46<sub>10</sub>
+                        </p>
+                    </article>
+                    <!-- Fin explicación binario -->
+
+                    <hr />
+
+                    <!--  -->
+                    <!-- Explicación Hexadecimal -->
+                    <article class="explicacionDecimal">
+                        <h2 id="tituloHexa" class="explicationH2">
+                            Explicación conversión número decimal a hexadecimal
+                        </h2>
+                        <p>
+                            Finalmente, los números hexadecimales tiene base 16,
+                            están representados por 16 símbolos que son:
+                        </p>
+                        <table class="tableNumbers tableHexadecimal">
+                            <th>Números decimales</th>
+                            <th>Números hexadecimales</th>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>B</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>C</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>D</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>E</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>F</td>
+                            </tr>
+                        </table>
+                        <p>Por ejemplo, el número 2A2 tiene base 16.</p>
+                        <p class="simbolos">2A2<sub>16</sub></p>
+                        <p>
+                            Aunque estos no siempre llevan letra por ejemplo el
+                            número 25 en base 10 (decimal) seria el número 19 en
+                            base 16 (hexadecimal)
+                        </p>
+                        <p>
+                            Para convertir un número de base 10 (decimal) a base
+                            16 (hexadecimal), se debe dividir sucesivamente el
+                            número entre 16, hasta que el número residuo de la
+                            división sea menor a 16 teniendo en cuenta los
+                            últimos residuos de la división y el último
+                            resultado obtenido, se reemplazan por los números
+                            hexadecimales, nota: no se tiene en cuenta la parte
+                            decimal de la división. <br /><em>Ejemplo:</em>
+                            <br />Convertir el número decimal
+                            <strong>674</strong> a hexadecimal: <br />Teniendo
+                            en cuenta que:
+                        </p>
+                        <table class="tableNumbers tablaMultiplos">
+                            <tr>
+                                <td>16 * 1 = 16</td>
+                                <td>16 * 2 = 32</td>
+                                <td>16 * 3 = 48</td>
+                                <td>16 * 4 = 64</td>
+                                <td>16 * 5 = 80</td>
+                                <td>16 * 6 = 96</td>
+                                <td>16 * 7 = 133</td>
+                            </tr>
+                        </table>
+                        <p>Entonces realizando la división:</p>
+                        <img
+                            class="imagenDivisionHexadecimal"
+                            src="assets/img/División.PNG"
+                            alt="Imagen del paso a paso de la división"
+                            title="División"
+                        />
+                        <p>
+                            Los números en negrilla (el ultimo resultado y los
+                            residuos en ese orden) se deben reemplazar según la
+                            tabla de los números hexadecimales
+                        </p>
+
+                        <table class="tableNumbers tableHexadecimal">
+                            <th>Resultado</th>
+                            <th>Número hexadecimal</th>
+                            <tr>
+                                <td>2</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2</td>
+                            </tr>
+                        </table>
+                        <p class="simbolos">
+                            Entonces el número 674<sub>10</sub> es igual a
+                            2A2<sub>16</sub>
+
+                            <br /><em>Ejemplo:</em> <br />Convertir el número
+                            decimal <strong>40</strong> a hexadecimal:
+                        </p>
+                        <p>Entonces realizando la división:</p>
+                        <img
+                            class="imagenDivisionHexadecimalDos"
+                            src="assets/img/División 2.PNG"
+                            alt="Imagen del paso a paso de la división"
+                            title="División"
+                        />
+
+                        <table class="tableNumbers tableHexadecimal">
+                            <th>Resultado</th>
+                            <th>Número hexadecimal</th>
+                            <tr>
+                                <td>2</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>8</td>
+                            </tr>
+                        </table>
+                        <p class="simbolos">
+                            En este caso el número 40<sub>10</sub>sería el
+                            número 28<sub>16</sub>
+                        </p>
+                    </article>
+                    <!-- Fin explicación hexadecimal -->
+                </section>
+                <!-- Fin sección explicación del tema -->
+            </section>
+            <!-- Fin main container -->
+        </main>
+
+        <br />
+        <!-- Footer -->
+        <footer class="footer">
+            <section class="sectionFooter">
+                <p class="footerYear">2025</p>
+                <a href="#titulo" class="irInicio">Ir al titulo</a>
+            </section>
+        </footer>
+    </body>
+</html>

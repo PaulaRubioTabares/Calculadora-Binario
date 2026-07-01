@@ -1,0 +1,194 @@
+body {
+    background-color: #ececec;
+    font-size: 10px;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    padding: 1rem;
+    margin-bottom: 1.7rem;
+    font-size: 1.2rem;
+    border-radius: 7px;
+    text-align: center;
+    text-shadow: 0.1rem 0.1rem 0.4rem #000000;
+    box-shadow: 0.2rem 0.2rem 0.4rem #626aa3;
+    color: #ffffff;
+    background: linear-gradient(
+        178deg,
+        rgba(136, 132, 207, 1) 12%,
+        rgba(167, 169, 212, 1) 28%,
+        rgba(178, 180, 206, 1) 89%
+    );
+}
+
+/* menú */
+
+.lista {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.listaEnlace {
+    padding: 8px;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease-out;
+    color: #e8e9ee;
+    background-color: #a87b94;
+}
+.listaEnlace:hover {
+    box-shadow: 0.2rem 0.2rem 0.4rem #626aa3;
+}
+
+/* Contenido */
+
+/* Contenedor principal */
+.mainContainer {
+    margin: 0 2rem;
+    font-size: 1.1rem;
+}
+.mainContainer p {
+    line-height: 2rem;
+    margin: 1rem;
+}
+
+.convertidores {
+    display: flex;
+    gap: 10px; /* No mover gap */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 25%; /* No mover tamaño */
+}
+
+.convertidores .convertir {
+    margin: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    color: #423c4b;
+    background-color: #cfd0da;
+}
+.convertidores .convertir:hover {
+    box-shadow: 0.1rem 0.1rem 0.7rem #a292bc;
+    /*box-shadow: Derecha abajo diseminación color(0, 0, 0, visibilidad);*/
+}
+
+.padding {
+    padding: 0.5rem 3%; /* No cambiar el % */
+}
+
+.h2Convertir {
+    font-size: 1.3em;
+}
+
+.buttonConvertir {
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* 
+
+
+Section Explicación
+*/
+.explication .explicationH2 {
+    text-align: center;
+}
+
+/* img Explicación parte hexadecimal */
+.imagenDivisionHexadecimal,
+.imagenDivisionHexadecimalDos {
+    margin: 0 30%;
+}
+.imagenDivisionHexadecimal {
+    height: 20em;
+}
+.imagenDivisionHexadecimalDos {
+    height: 6em;
+}
+
+/* tablas en general */
+.tableNumbers,
+.tableHexadecimal {
+    text-align: center;
+    width: 80%;
+    border-collapse: collapse; /*no permite que cada celda tenga borde independiente*/
+    margin: 0 auto;
+    table-layout: fixed; /* Esto asegura que todas las celdas tengan el mismo ancho */
+}
+.tableNumbers {
+    width: 80%;
+}
+.tableHexadecimal {
+    width: 25%;
+}
+
+/* Filas y columnas de las tablas */
+.tableNumbers th,
+.tableNumbers td {
+    border: solid 1px #a87b94;
+    padding: 8px;
+    /*border: solid 1px darkred; Borde a las etiquetas de th y td, en este caso están en la tabla 
+    En este caso padding crea más espacio entre elementos, ya que se aplica a cada uno*/
+    width: 8.2%;
+    word-wrap: break-word; /* Para que el contenido largo se ajuste */
+}
+
+.tableNumbers th {
+    background-color: #a87b94;
+    color: #e8e9ee;
+}
+
+/* tr:nth-child() permite seleccionar ciertos elementos en particular */
+.tableNumbers tr:nth-child(even) {
+    background-color: #dfdfe4;
+}
+
+/* Footer en general */
+
+.footer {
+    padding: 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background: #8884cf;
+    background: linear-gradient(
+        178deg,
+        rgba(136, 132, 207, 1) 12%,
+        rgba(167, 169, 212, 1) 28%,
+        rgba(178, 180, 206, 1) 89%
+    );
+}
+
+.sectionFooter {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Contenido footer */
+.footer .footerYear {
+    margin: 0;
+}
+.footer .irInicio {
+    color: #fff;
+    transition: color 0.3s linear;
+}
+.footer .irInicio:hover {
+    color: #a87b94;
+    text-shadow: 0 0 3px #a292bc;
+}
+
+@media screen and (max-width: 600px) {
+    .buttonConvertir {
+        display: block;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .tableNumbers {
+        width: 100%;
+    }
+}
