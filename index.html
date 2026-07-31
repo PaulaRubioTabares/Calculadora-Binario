@@ -17,17 +17,17 @@
             <nav>
                 <ul class="lista">
                     <li>
-                        <a href="#tituloDecimal" class="listaEnlace"
+                        <a href="#tituloDecimal" class="listaEnlace desaparecer"
                             ><strong>De decimal a binario</strong>
                         </a>
                     </li>
                     <li>
-                        <a href="#tituloBinario" class="listaEnlace"
+                        <a href="#tituloBinario" class="listaEnlace desaparecer"
                             ><strong>De binario a decimal</strong></a
                         >
                     </li>
                     <li>
-                        <a href="#tituloHexa" class="listaEnlace"
+                        <a href="#tituloHexa" class="listaEnlace desaparecer"
                             ><strong>De decimal a hexadecimal</strong></a
                         >
                     </li>
@@ -51,8 +51,9 @@
                             Convertir número Decimal a Binario y Hexadecimal
                         </h2>
                         <input
+                            class="inputNumber padding"
                             type="number"
-                            id="ndecimal"
+                            id="decimal"
                             placeholder="Ejemplo: 253"
                             class="padding"
                         />
@@ -63,11 +64,12 @@
                             Convertir
                         </button>
 
-                        <p class="padding">
-                            <em>Binario:</em> <span id="binario"></span>
+                        <p>
+                            <em>Binario:</em> <span id="decimalBinario"></span>
                         </p>
-                        <p class="padding">
-                            <em>Hexadecimal:</em> <span id="hexadecimal"></span>
+                        <p>
+                            <em>Hexadecimal:</em>
+                            <span id="decimalHexadecimal"></span>
                         </p>
                     </article>
 
@@ -78,8 +80,9 @@
                             Convertir número Binario a Decimal y Hexadecimal
                         </h2>
                         <input
+                            class="inputNumber padding"
                             type="number"
-                            id="nbinario"
+                            id="binario"
                             placeholder="Ejemplo: 10110"
                             class="padding"
                         />
@@ -90,11 +93,12 @@
                             Convertir
                         </button>
 
-                        <p class="padding">
+                        <p>
                             <em>Decimal:</em> <span id="binarioDecimal"></span>
                         </p>
-                        <p class="padding">
-                            <em>Hexadecimal:</em> <span id="binarioHexa"></span>
+                        <p>
+                            <em>Hexadecimal:</em>
+                            <span id="binarioHexadecimal"></span>
                         </p>
                     </article>
 
@@ -105,8 +109,9 @@
                             Convertir número Hexadecimal a Decimal y Binario
                         </h2>
                         <input
+                            class="inputNumber padding"
                             type="text"
-                            id="nhexa"
+                            id="hexadecimal"
                             placeholder="Ejemplo: 3E"
                             class="padding"
                         />
@@ -117,11 +122,13 @@
                             Convertir
                         </button>
 
-                        <p class="padding">
-                            <em>Decimal:</em> <span id="hexaDecimal"></span>
+                        <p>
+                            <em>Decimal:</em>
+                            <span id="hexadecimalDecimal"></span>
                         </p>
-                        <p class="padding">
-                            <em>Binario:</em> <span id="hexaBinario"></span>
+                        <p>
+                            <em>Binario:</em>
+                            <span id="hexadecimalBinario"></span>
                         </p>
                     </article>
                 </section>
@@ -476,6 +483,7 @@
             <!-- Fin main container -->
         </main>
 
+        <script src="js/app.js"></script>
         <br />
         <!-- Footer -->
         <footer class="footer">

@@ -28,10 +28,11 @@ a {
 /* menú */
 
 .lista {
-    list-style-type: none;
     display: flex;
-    justify-content: center;
     gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
 }
 .listaEnlace {
     padding: 8px;
@@ -59,10 +60,10 @@ a {
 
 .convertidores {
     display: flex;
-    gap: 10px; /* No mover gap */
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: space-around;
-    height: 25%; /* No mover tamaño */
+    font-size: clamp(0.8rem, 1.2vw, 1.5rem);
 }
 
 .convertidores .convertir {
@@ -71,6 +72,7 @@ a {
     border-radius: 10px;
     color: #423c4b;
     background-color: #cfd0da;
+    max-width: 45%;
 }
 .convertidores .convertir:hover {
     box-shadow: 0.1rem 0.1rem 0.7rem #a292bc;
@@ -78,6 +80,7 @@ a {
 }
 
 .padding {
+    margin: 0.4rem;
     padding: 0.5rem 3%; /* No cambiar el % */
 }
 
@@ -85,6 +88,9 @@ a {
     font-size: 1.3em;
 }
 
+.inputNumber {
+    width: 85%;
+}
 .buttonConvertir {
     cursor: pointer;
     border-radius: 10px;
@@ -154,6 +160,7 @@ Section Explicación
     padding: 1.5rem;
     font-size: 1rem;
     color: #fff;
+    border-radius: 7px;
     background: #8884cf;
     background: linear-gradient(
         178deg,
@@ -169,6 +176,7 @@ Section Explicación
 }
 
 /* Contenido footer */
+
 .footer .footerYear {
     margin: 0;
 }
@@ -181,13 +189,36 @@ Section Explicación
     text-shadow: 0 0 3px #a292bc;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
+    /* Navegador */
+
+    .desaparecer {
+        display: none;
+    }
+
+    /* Convertidores */
+    .convertidores {
+        font-size: 0.6rem;
+    }
+    .padding {
+        padding: 0.3rem;
+        margin: 0.1rem;
+    }
+    .convertidores .convertir {
+        margin: 1rem;
+        max-width: 40%;
+    }
+    .inputNumber {
+        width: 60%;
+    }
+
     .buttonConvertir {
-        display: block;
         margin-top: 1rem;
         margin-left: auto;
         margin-right: auto;
     }
+
+    /* Explicación */
     .tableNumbers {
         width: 100%;
     }
