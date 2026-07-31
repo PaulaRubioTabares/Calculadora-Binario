@@ -223,3 +223,10 @@ Section Explicación
         width: 100%;
     }
 }
+
+@media screen and (max-width: 450px) {
+    .convertidores .convertir {
+        margin: 1rem;
+        max-width: 80%;
+    }
+}
