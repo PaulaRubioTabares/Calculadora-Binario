@@ -1,4 +1,13 @@
-/*Se lee el dato ingresado en el input id ndecimal*/
+/* Menú de navegación */
+function action() {
+    var ancla = document.getElementsByClassName("listaEnlace");
+
+    for (var i = 0; i < ancla.length; i++) {
+        ancla[i].classList.toggle("desaparecer");
+    }
+}
+
+/*Se lee el dato ingresado en el input id decimal*/
 
 /*document.getElementById("numero").value: Obtiene el número que escribiste.
 
@@ -6,17 +15,17 @@ parseInt(...): Convierte ese texto a un número entero.*/
 
 function convertirDecimal() {
     /*función llamada en el button*/
-    const ndecimal = parseInt(document.getElementById("ndecimal").value);
+    const decimal = parseInt(document.getElementById("decimal").value);
 
-    if (isNaN(ndecimal)) {
+    if (isNaN(decimal)) {
         /*Datos inválidos
         isNaN(numero): Verifica si no es un número (por ejemplo, si dejaste la caja vacía)*/
         alert("Por favor ingresa un número válido.");
         return;
     }
 
-    document.getElementById("binario").textContent = ndecimal.toString(2);
-    document.getElementById("hexadecimal").textContent = ndecimal
+    document.getElementById("decimalBinario").textContent = decimal.toString(2);
+    document.getElementById("decimalHexadecimal").textContent = decimal
         .toString(16)
         .toUpperCase();
 }
@@ -32,39 +41,40 @@ function convertirDecimal() {
 */
 
 function convertirBinario() {
-    const nbinario = document.getElementById("nbinario").value.trim();
+    const binario = document.getElementById("binario").value.trim();
 
-    if (!/^[01]+$/.test(nbinario)) {
+    if (!/^[01]+$/.test(binario)) {
         /*Datos inválidos*/
         alert("Ingresa un número binario válido (solo 0 y 1).");
         return;
     }
     // Convertir binario a decimal (base 2)
-    const decimal = parseInt(nbinario, 2);
+    const decimal = parseInt(binario, 2);
     document.getElementById("binarioDecimal").textContent = decimal;
-    document.getElementById("binarioHexa").textContent = decimal
+    document.getElementById("binarioHexadecimal").textContent = decimal
         .toString(16)
         .toUpperCase();
 }
 
 function convertirHexadecimal() {
-    const nhexa = document.getElementById("nhexa").value.trim();
+    const hexadecimal = document.getElementById("hexadecimal").value.trim();
 
-    if (!/^[0-9a-fA-F]+$/.test(nhexa)) {
+    if (!/^[0-9a-fA-F]+$/.test(hexadecimal)) {
         /*Datos inválidos*/
         alert("Por favor ingresa un número válido.");
         return;
     }
     // Conversión a decimal usando base 16
-    const decimal = parseInt(nhexa, 16);
-    document.getElementById("hexaDecimal").textContent = decimal;
-    document.getElementById("hexaBinario").textContent = decimal.toString(2);
+    const decimal = parseInt(hexadecimal, 16);
+    document.getElementById("hexadecimalDecimal").textContent = decimal;
+    document.getElementById("hexadecimalBinario").textContent =
+        decimal.toString(2);
 }
 
 // Permite ejecutar la conversión al presionar la tecla ENTER
 document.addEventListener("DOMContentLoaded", function () {
     document
-        .getElementById("ndecimal")
+        .getElementById("decimal")
         .addEventListener("keydown", function (event) {
             if (event.key === "Enter") {
                 convertirDecimal();
@@ -72,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     document
-        .getElementById("nbinario")
+        .getElementById("binario")
         .addEventListener("keydown", function (event) {
             if (event.key === "Enter") {
                 convertirBinario();
@@ -80,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     document
-        .getElementById("nhexa")
+        .getElementById("hexadecimal")
         .addEventListener("keydown", function (event) {
             if (event.key === "Enter") {
                 convertirHexadecimal();
