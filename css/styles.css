@@ -241,6 +241,11 @@ Section Explicación
     .tableNumbers {
         width: 100%;
     }
+    .tableDecimal,
+    .tableBinario,
+    .tablaMultiplicar {
+        font-size: 0.8rem;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -260,11 +265,6 @@ Section Explicación
     .nav,
     .initialText {
         display: none;
-    }
-    .tableDecimal,
-    .tableBinario,
-    .tablaMultiplicar {
-        font-size: 0.8rem;
     }
     .img {
         height: minmax(min(160px), auto);
