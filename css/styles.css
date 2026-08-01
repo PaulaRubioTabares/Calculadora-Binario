@@ -262,7 +262,8 @@ Section Explicación
         display: none;
     }
     .tableDecimal,
-    .tableBinario {
+    .tableBinario,
+    .tablaMultiplicar {
         font-size: 0.8rem;
     }
     .img {
