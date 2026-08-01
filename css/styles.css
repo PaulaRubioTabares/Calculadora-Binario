@@ -1,3 +1,16 @@
+:root {
+    /* Degradado */
+    --color-oscuro: #8884cf;
+    --color-medio: #a7a9d4;
+    --color-claro: #b2b4ce;
+
+    --color: #fff;
+    --color-secundario: #a87b94;
+    --color-sombra: #a292bc;
+    --border-radius: 10px;
+    --sombra: 0.2rem 0.2rem 0.4rem #626aa3;
+}
+
 body {
     background-color: #ececec;
     font-size: 10px;
@@ -12,16 +25,16 @@ a {
     padding: 1rem;
     margin-bottom: 1.7rem;
     font-size: 1.2rem;
-    border-radius: 7px;
+    border-radius: var(--border-radius);
     text-align: center;
-    text-shadow: 0.1rem 0.1rem 0.4rem #000000;
-    box-shadow: 0.2rem 0.2rem 0.4rem #626aa3;
-    color: #ffffff;
+    text-shadow: 0.1rem 0.1rem 0.4rem #000;
+    box-shadow: var(--sombra);
+    color: var(--color);
     background: linear-gradient(
         178deg,
-        rgba(136, 132, 207, 1) 12%,
-        rgba(167, 169, 212, 1) 28%,
-        rgba(178, 180, 206, 1) 89%
+        var(--color-oscuro) 12%,
+        var(--color-medio) 28%,
+        var(--color-claro) 89%
     );
 }
 
@@ -37,13 +50,13 @@ a {
 .listaEnlace {
     padding: 8px;
     font-size: 1.2rem;
-    border-radius: 1rem;
+    border-radius: var(--border-radius);
     transition: all 0.3s ease-out;
     color: #e8e9ee;
-    background-color: #a87b94;
+    background-color: var(--color-secundario);
 }
 .listaEnlace:hover {
-    box-shadow: 0.2rem 0.2rem 0.4rem #626aa3;
+    box-shadow: var(--sombra);
 }
 
 /* Contenido */
@@ -69,14 +82,19 @@ a {
 .convertidores .convertir {
     margin: 1rem;
     text-align: center;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     color: #423c4b;
     background-color: #cfd0da;
     max-width: 45%;
 }
 .convertidores .convertir:hover {
-    box-shadow: 0.1rem 0.1rem 0.7rem #a292bc;
+    box-shadow: 0.1rem 0.1rem 0.7rem var(--color-sombra);
     /*box-shadow: Derecha abajo diseminación color(0, 0, 0, visibilidad);*/
+}
+
+.textoResaltado {
+    color: var(--color-secundario);
+    text-shadow: 0 0 3px var(--color-sombra);
 }
 
 .padding {
@@ -93,7 +111,11 @@ a {
 }
 .buttonConvertir {
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-sombra);
+}
+.buttonConvertir:hover {
+    background-color: var(--color-secundario);
 }
 
 /* 
@@ -136,16 +158,15 @@ Section Explicación
 /* Filas y columnas de las tablas */
 .tableNumbers th,
 .tableNumbers td {
-    border: solid 1px #a87b94;
+    border: solid 1px var(--color-secundario);
     padding: 8px;
-    /*border: solid 1px darkred; Borde a las etiquetas de th y td, en este caso están en la tabla 
-    En este caso padding crea más espacio entre elementos, ya que se aplica a cada uno*/
+    /*En este caso padding crea más espacio entre elementos, ya que se aplica a cada uno*/
     width: 8.2%;
     word-wrap: break-word; /* Para que el contenido largo se ajuste */
 }
 
 .tableNumbers th {
-    background-color: #a87b94;
+    background-color: var(--color-secundario);
     color: #e8e9ee;
 }
 
@@ -159,14 +180,14 @@ Section Explicación
 .footer {
     padding: 1.5rem;
     font-size: 1rem;
-    color: #fff;
-    border-radius: 7px;
+    color: var(--color);
+    border-radius: var(--border-radius);
     background: #8884cf;
     background: linear-gradient(
         178deg,
-        rgba(136, 132, 207, 1) 12%,
-        rgba(167, 169, 212, 1) 28%,
-        rgba(178, 180, 206, 1) 89%
+        var(--color-oscuro) 12%,
+        var(--color-medio) 28%,
+        var(--color-claro) 89%
     );
 }
 
@@ -181,21 +202,19 @@ Section Explicación
     margin: 0;
 }
 .footer .irInicio {
-    color: #fff;
+    color: var(--color);
     transition: color 0.3s linear;
 }
 .footer .irInicio:hover {
-    color: #a87b94;
-    text-shadow: 0 0 3px #a292bc;
+    color: var(--color-secundario);
+    text-shadow: 0 0 3px var(--color-sombra);
 }
 
 @media screen and (max-width: 750px) {
     /* Navegador */
-
     .desaparecer {
         display: none;
     }
-
     /* Convertidores */
     .convertidores {
         font-size: 0.6rem;
@@ -224,9 +243,30 @@ Section Explicación
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
+    .header {
+        font-size: clamp(0.8rem, 1vw, 1rem);
+        padding: 0.5rem;
+    }
+    .header,
+    .convertidores .pSpan {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
     .convertidores .convertir {
         margin: 1rem;
         max-width: 80%;
+    }
+    .nav,
+    .initialText {
+        display: none;
+    }
+    .tableDecimal,
+    .tableBinario {
+        font-size: 0.8rem;
+    }
+    .img {
+        height: minmax(min(160px), auto);
+        margin: 0;
     }
 }

@@ -14,7 +14,7 @@
 
         <main>
             <!-- navegación -->
-            <nav>
+            <nav class="nav">
                 <ul class="lista">
                     <li>
                         <a href="#tituloDecimal" class="listaEnlace desaparecer"
@@ -37,9 +37,11 @@
             <section class="mainContainer">
                 <!-- Calculadoras -->
                 <p>
-                    Ingresa el número a convertir según corresponda y oprime la
-                    tecla enter o con el mouse presiona el botón convertir
-                    correspondiente
+                    Ingresa el número a convertir
+                    <span class="initialText">
+                        según corresponda y oprime la tecla enter o con el mouse
+                        presiona el botón convertir correspondiente</span
+                    >
                 </p>
                 <!-- Contenedor convertidores -->
 
@@ -48,7 +50,9 @@
 
                     <article class="convertir">
                         <h2 class="padding h2Convertir">
-                            Convertir número Decimal a Binario y Hexadecimal
+                            Convertir número
+                            <span class="textoResaltado">Decimal</span> a
+                            Binario y Hexadecimal
                         </h2>
                         <input
                             class="inputNumber padding"
@@ -64,10 +68,10 @@
                             Convertir
                         </button>
 
-                        <p>
+                        <p class="pSpan">
                             <em>Binario:</em> <span id="decimalBinario"></span>
                         </p>
-                        <p>
+                        <p class="pSpan">
                             <em>Hexadecimal:</em>
                             <span id="decimalHexadecimal"></span>
                         </p>
@@ -77,7 +81,9 @@
 
                     <article class="convertir">
                         <h2 class="padding h2Convertir">
-                            Convertir número Binario a Decimal y Hexadecimal
+                            Convertir número
+                            <span class="textoResaltado">Binario</span> a
+                            Decimal y Hexadecimal
                         </h2>
                         <input
                             class="inputNumber padding"
@@ -93,10 +99,10 @@
                             Convertir
                         </button>
 
-                        <p>
+                        <p class="pSpan">
                             <em>Decimal:</em> <span id="binarioDecimal"></span>
                         </p>
-                        <p>
+                        <p class="pSpan">
                             <em>Hexadecimal:</em>
                             <span id="binarioHexadecimal"></span>
                         </p>
@@ -106,7 +112,9 @@
 
                     <article class="convertir">
                         <h2 class="padding h2Convertir">
-                            Convertir número Hexadecimal a Decimal y Binario
+                            Convertir número
+                            <span class="textoResaltado">Hexadecimal</span> a
+                            Decimal y Binario
                         </h2>
                         <input
                             class="inputNumber padding"
@@ -122,11 +130,11 @@
                             Convertir
                         </button>
 
-                        <p>
+                        <p class="pSpan">
                             <em>Decimal:</em>
                             <span id="hexadecimalDecimal"></span>
                         </p>
-                        <p>
+                        <p class="pSpan">
                             <em>Binario:</em>
                             <span id="hexadecimalBinario"></span>
                         </p>
@@ -276,17 +284,17 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="color: #b974bb">
+                                <td class="textoResaltado">
                                     <strong>32</strong>
                                 </td>
                                 <td>16</td>
-                                <td style="color: #b974bb">
+                                <td class="textoResaltado">
                                     <strong>8</strong>
                                 </td>
-                                <td style="color: #b974bb">
+                                <td class="textoResaltado">
                                     <strong>4</strong>
                                 </td>
-                                <td style="color: #b974bb">
+                                <td class="textoResaltado">
                                     <strong>2</strong>
                                 </td>
                                 <td>1</td>
@@ -417,7 +425,7 @@
                         </table>
                         <p>Entonces realizando la división:</p>
                         <img
-                            class="imagenDivisionHexadecimal"
+                            class="img imagenDivisionHexadecimal"
                             src="assets/img/División.PNG"
                             alt="Imagen del paso a paso de la división"
                             title="División"
@@ -453,7 +461,7 @@
                         </p>
                         <p>Entonces realizando la división:</p>
                         <img
-                            class="imagenDivisionHexadecimalDos"
+                            class="img imagenDivisionHexadecimalDos"
                             src="assets/img/División 2.PNG"
                             alt="Imagen del paso a paso de la división"
                             title="División"
@@ -488,7 +496,7 @@
         <!-- Footer -->
         <footer class="footer">
             <section class="sectionFooter">
-                <p class="footerYear">2025</p>
+                <p class="footerYear">2026</p>
                 <a href="#titulo" class="irInicio">Ir al titulo</a>
             </section>
         </footer>

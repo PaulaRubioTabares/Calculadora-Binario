@@ -1,12 +1,3 @@
-/* Menú de navegación */
-function action() {
-    var ancla = document.getElementsByClassName("listaEnlace");
-
-    for (var i = 0; i < ancla.length; i++) {
-        ancla[i].classList.toggle("desaparecer");
-    }
-}
-
 /*Se lee el dato ingresado en el input id decimal*/
 
 /*document.getElementById("numero").value: Obtiene el número que escribiste.
