@@ -270,4 +270,7 @@ Section Explicación
         height: minmax(min(160px), auto);
         margin: 0;
     }
+    .tableNumbers {
+        font-size: 0.8rem;
+    }
 }
